@@ -50,6 +50,11 @@ gulp.task('scripts', function () {
 gulp.task('serve', function () {
     browserSync.init({
         server: "./",
+        port: 8080,
+        ui: {
+            port: 8081,
+        }
+    
     });
     gulp.watch("./assets/stylesheets/scss/**/*.scss", ['styles']);
     gulp.watch(["./*.html", "./assets/javascripts/*.js"]).on('change', browserSync.reload);
